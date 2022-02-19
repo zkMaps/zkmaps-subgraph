@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: Verifier
-    network: matic
+    network: {{ network }}
     source:
-      address: "0xB5217d3E37F12F89138113534953E1b9583e4F3B"
+      address: {{ verifier }}
       abi: Verifier
-      startBlock: 25077950 
+      startBlock: {{startBlock}} 
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
