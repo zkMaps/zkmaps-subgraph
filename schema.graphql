@@ -1,6 +1,7 @@
-type ExampleEntity @entity {
+type LogVerified @entity {
   id: ID!
-  count: BigInt!
-  userAddress: Bytes! # address
-  timestamp: BigInt! # uint256
+  userAddress: Bytes!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  transactionHash: Bytes!
 }
