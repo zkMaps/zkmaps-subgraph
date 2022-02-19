@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Verifier
+    network: mumbai
+    source:
+      address: "0xB5217d3E37F12F89138113534953E1b9583e4F3B"
+      abi: Verifier
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - LogVerified
+      abis:
+        - name: Verifier
+          file: ./abis/Verifier.json
+      eventHandlers:
+        - event: LogVerified(address,indexed uint256)
+          handler: handleLogVerified
+      file: ./src/mapping.ts
